@@ -56,12 +56,15 @@ public class MainActivity extends AppCompatActivity {
                     String lastEdit = object.getString("lastEdit");
                     String category = object.getString("categoryId");
 
-                    data.add(title + "\n" + content);
+                    data.add(title + "\n" + content + "\n" + created+ "\n" + lastEdit + "\n" + category);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                     return;
                 }
             }
+
+            posts.setText("");
 
             for (String row: data) {
                 String currentText = posts.getText().toString();
