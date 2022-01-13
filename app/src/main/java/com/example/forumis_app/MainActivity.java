@@ -79,4 +79,13 @@ public class MainActivity extends AppCompatActivity {
             Log.d("REST error", error.getMessage());
         }
     };
+
+    public static final String EXTRA_MESSAGE = "com.example.forumis_app.MESSAGE";
+
+    public void addPostActivity(View view) {
+        Intent intent = new Intent(this, AddPostActivity.class);
+        String message = "Dodaj objavo v seznam.";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
 }
